@@ -2,9 +2,19 @@
 
 1. install OS (ubuntu desktop 24.04.2.LTS)
 2. install python
-3. install git
-4. clone repo for playbook
-5. run playbook
+   ```sh
+     sudo apt update
+     sudo apt install python3 build-essential -y
+   ```
+4. install git
+5. clone repo for playbook
+6. install ansible
+   ```sh
+     sudo apt update
+     sudo apt install software-properties-common --reinstall
+     sudo add-apt-repository --yes --update ppa:ansible/ansible
+   ```
+8. run playbook
 
 ### Playbook
 
