@@ -16,12 +16,13 @@
      sudo apt install ansible -y
    ```
 8. run playbook
+   ```sh
+     ansible-playbook -i "localhost," -c local install.yml
+   ```
 
-### Playbook
+### Playbooks
 
-- install docker (docker)[./install_docker.yml]
-- install github desktop
-- install virtual studio code
-- install jupyter lab
-- install ollama
-- install open-webui
+- [docker](./playbooks/install_docker.yml)
+- [visual studio code](./playbooks/install_vscode.yml)
+- [ollama](./playbooks/install_ollama.yml)
+- [open webui](./playbooks/install_open-webui.yml)
