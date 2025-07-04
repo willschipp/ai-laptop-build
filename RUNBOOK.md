@@ -13,12 +13,13 @@
      sudo apt update
      sudo apt install software-properties-common --reinstall
      sudo add-apt-repository --yes --update ppa:ansible/ansible
+     sudo apt install ansible -y
    ```
 8. run playbook
 
 ### Playbook
 
-- install docker
+- install docker (docker)[./install_docker.yml]
 - install github desktop
 - install virtual studio code
 - install jupyter lab
