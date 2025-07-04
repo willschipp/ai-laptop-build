@@ -7,7 +7,6 @@
      sudo apt install python3 build-essential -y
    ```
 4. install git
-5. clone repo for playbook
 6. install ansible
    ```sh
      sudo apt update
@@ -15,9 +14,14 @@
      sudo add-apt-repository --yes --update ppa:ansible/ansible
      sudo apt install ansible -y
    ```
-8. run playbook
+7. clone repo for playbooks
    ```sh
-     ansible-playbook -i "localhost," -c local install.yml
+      git clone https://github.com/willschipp/ai-laptop-build.git
+   ```
+9. run playbook
+   ```sh
+      cd playbooks
+      ansible-playbook -i "localhost," -c local install.yml
    ```
 
 ### Playbooks
