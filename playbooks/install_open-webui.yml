@@ -1,0 +1,44 @@
+---
+- hosts: all
+  become: true
+  gather_facts: true
+
+  tasks:
+    - name: Update apt cache
+      apt:
+        update_cache: yes
+        cache_valid_time: 3600
+
+    - name: Install required packages
+      apt:
+        name:
+          - curl
+          - python3
+          - python3-pip
+          - systemd
+        state: present
+
+    - name: Download uv installer script
+      get_url:
+        url: https://astral.sh/uv/install.sh
+        dest: /tmp/uv_install.sh
+        mode: '0755'
+
+    - name: Execute uv installer script
+      shell: /tmp/uv_install.sh
+      environment:
+        XDG_BIN_HOME: /usr/local/bin
+      args:
+        creates: /usr/local/bin/uv
+
+    - name: Ensure uv binary is executable
+      file:
+        path: /usr/local/bin/uv
+        mode: '0755'
+        owner: root
+        group: root
+
+    - name: Clean up installer script
+      file:
+        path: /tmp/uv_install.sh
+        state: absent

@@ -1,0 +1,7 @@
+---
+- name: Install Ollama using official install script
+  hosts: all
+  become: yes
+  tasks:
+    - name: Run Ollama install script
+      ansible.builtin.shell: curl -fsSL https://ollama.com/install.sh | sh
