@@ -2,4 +2,3 @@
 - import_playbook: install_docker.yml
 - import_playbook: install_ollama.yml
 - import_playbook: install_vscode.yml
-- import_playbook: install_open-webui.yml
