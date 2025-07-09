@@ -33,6 +33,10 @@
       sudo apt install pipx -y
       pipx install open-webui
    ```
+9. install `jupyter lab`
+   ```sh
+      pipx install jupyter-lab
+   ```
 
 ### Playbooks
 
